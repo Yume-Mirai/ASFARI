@@ -1,0 +1,1182 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* tampilan untuk menampilkan page ketika posisi landscape  */
+@media (orientation: landscape) {
+    header {
+        /* tampilan header  */
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: white;
+        border-bottom: 5px solid orange;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        z-index: 15;
+        top: 0;
+        right: 0;
+
+        >.judul {
+            display: flex;
+            justify-content: center;
+            width: 20%;
+            background-color: black;
+
+            >h1 {
+                /* style untuk judul YumeNime  */
+                margin: auto;
+                color: white;
+                font-family: 'Oswald', sans-serif;
+                font-size: 2vw;
+            }
+        }
+
+        >.navy {
+            /*style untuk navbar  */
+            width: 80%;
+            background-color: white;
+
+            >ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                list-style-type: none;
+
+                >li {
+                    font-size: 1vw;
+                    margin-top: 0.5vw;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        >div {
+            /* style untuk bagian kiri index.html dan manga.html  */
+            width: 66%;
+
+            section {
+                width: 100%;
+                margin-top: 6.3vw;
+
+                >h1 {
+                    /* style untuk judul konten slide  */
+                    width: 17.3vw;
+                    font-size: 1.6vw;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    text-align: center;
+                    border-radius: 0.4em 0.4em 0px 0px;
+                    background-color: orange;
+                    color: white;
+                    margin: 0;
+                    border-bottom: 2px solid orange;
+                }
+
+                >hr {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 99.4%;
+                    border-radius: 0px 1.4vw 0px 0px;
+                }
+
+                >.b {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 99.4%;
+                    border-radius: 0px 0px 1.4vw 1.4vw;
+
+                }
+
+                >.avr,
+                .slide {
+                    /* style untuk menampilkan slide gambar  */
+                    width: 100%;
+                    height: 27.8vw;
+                    position: relative;
+
+                    >a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 1s;
+
+                        >figure {
+                            margin: 0;
+                            width: 100%;
+                            height: 100%;
+
+
+                            >img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            >figcaption {
+                                position: absolute;
+                                bottom: 20px;
+                                left: 20px;
+                                color: white;
+                                font-size: 1.6vw;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                padding: 0.4em;
+                                border-radius: 0.2em;
+                            }
+                        }
+
+
+                    }
+
+                    >a.active {
+                        /* style untuk menampilkan gambar yang selalu berganti dikarenakan class active selalu di hilangkan dan ditambahkan pada js sehingga selalu berganti gambar  */
+                        opacity: 1;
+                        z-index: 10;
+                    }
+
+
+
+
+
+                }
+
+            }
+
+            >article {
+                width: 100%;
+
+                >.cur,
+                .up,
+                .finish,
+                .fis,
+                .manhua,
+                .manhwa {
+                    /* style untuk menampilkan konten  */
+                    margin-top: 0;
+                    border: 5px solid orange;
+                    width: 100%;
+                    height: 20.5vw;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    white-space: nowrap;
+                    border-radius: 0px 0px 0.7vw 0.7vw;
+
+                    >a {
+                        >figure {
+                            width: 12vw;
+                            height: 16.4vw;
+                            background-color: lightsalmon;
+                            display: inline-flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            text-align: center;
+                            border: 2px solid salmon;
+                            border-radius: 0.8vw;
+                            padding: 0.4vw;
+
+                            >img {
+                                display: block;
+                                width: 8.3vw;
+                                height: 9vw;
+                                border: 2px solid salmon;
+                                border-radius: 0.8vw;
+                            }
+
+                            >figcaption {
+                                overflow: auto;
+                                scrollbar-width: none;
+                                background-color: peachpuff;
+                                border: 2px solid salmon;
+                                border-radius: 10px;
+                                width: 10.8vw;
+                                height: 6vw;
+                                font-size: 1vw;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                white-space: normal;
+                                text-align: center;
+                            }
+
+                        }
+
+                        >figure:hover {
+                            box-shadow: 0px 0px 0.8vw 0.4vw orange;
+                        }
+                    }
+
+                }
+            }
+
+
+
+        }
+
+        >aside {
+            /* style untuk tampilan kanan index.html dan manga.html  */
+            width: 26%;
+
+            >.pop,
+            .tops {
+                margin-top: 6vw;
+                height: 103.1vw;
+                width: 27vw;
+
+                >hr {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 27.3vw;
+                    border-top-right-radius: 1.4vw;
+                }
+
+                >div {
+                    margin-top: 0;
+                    border: 5px solid orange;
+                    width: 100%;
+                    height: 100%;
+                    overflow-x: hidden;
+                    overflow-y: auto;
+                    border-radius: 0px 0px 0.7vw 0.7vw;
+
+                    >a {
+                        >figure {
+                            width: 15.5vw;
+                            height: 16.8vw;
+                            background-color: lightsalmon;
+                            display: flex;
+                            margin: 1.4vw 4.8vw;
+                            padding: 0.5vw;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+                            text-align: center;
+                            border: 2px solid salmon;
+                            border-radius: 1vw;
+
+
+                            >img {
+                                display: block;
+                                width: 10vw;
+                                height: 10vw;
+                                border: 2px solid salmon;
+                                border-radius: 0.5vw;
+                            }
+
+                            >figcaption {
+                                overflow: auto;
+                                background-color: peachpuff;
+                                border: 2px solid salmon;
+                                border-radius: 0.7vw;
+                                width: 12.9vw;
+                                height: 6vw;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                white-space: normal;
+                                text-align: center;
+                                font-size: 1vw;
+                            }
+                        }
+
+                        >figure:hover {
+                            box-shadow: 0px 0px 0.8vw 0.3vw orange;
+                        }
+
+                    }
+
+
+                }
+
+            }
+        }
+
+    }
+
+    h2 {
+        /* style untuk judul konten  */
+        margin: 1.5vw 0px 0px;
+        display: block;
+        width: 17.3vw;
+        font-size: 1.56vw;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        border-radius: 10px 10px 0px 0px;
+        background-color: orange;
+        color: white;
+    }
+
+    .a {
+        margin: 0;
+        border: 3px solid orange;
+        width: 100.4%;
+        border-top-right-radius: 1.4vw;
+    }
+
+    a {
+        /* menghilangkan css default dari tag a  */
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        color: coral;
+    }
+
+    footer {
+        /* style untuk footer  */
+        margin-top: 2.5vw;
+        width: 100%;
+        height: 12.5vw;
+        border-top: 7px solid orange;
+        background-color: white;
+        text-align: center;
+
+        >.foot {
+            display: flex;
+            justify-content: space-evenly;
+
+            >div {
+                text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+                width: 27.8vw;
+
+                >h3 {
+                    margin: 30px 0px 0px 0px;
+                }
+
+                >hr {
+                    border: 1px solid grey;
+                }
+            }
+        }
+
+        >.copy {
+            margin-top: 1.3vw;
+        }
+
+    }
+
+    .show {
+        /* style untuk show.html dan expose.html  */
+        display: flex;
+        flex-direction: column;
+
+        >.jdl {
+            margin-top: 3em;
+            display: block;
+            font-size: 2vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            border-radius: 0.3em 0.3em 0px 0px;
+            background-color: orange;
+            color: white;
+            padding-bottom: o.3em;
+            border-bottom: 4px solid coral;
+        }
+
+        >article {
+            display: flex;
+
+            >aside {
+                /* style untuk bagian kiri  */
+                width: 33%;
+                background-color: orange;
+                height: 54vw;
+                display: flex;
+                justify-content: center;
+                border-bottom-left-radius: 0.65vw;
+
+                >figure {
+                    border-radius: 0.65vw;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    background-color: peachpuff;
+
+                    >img {
+                        border-radius: 0.65vw;
+                        display: block;
+                        margin-top: 1.9vw;
+                        width: 14.8vw;
+                        height: 21vw;
+                    }
+
+                    >figcaption {
+                        font-size: 1.1vw;
+                        margin-top: 1.9vw;
+                        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+                        width: 22.1vw;
+                        display: block;
+                    }
+                }
+            }
+
+            >.mid {
+                /* style untuk bagian kanan  */
+                border-bottom-right-radius: 0.65vw;
+                width: 67%;
+                background-color: orange;
+                border-left: 4px solid coral;
+                height: 54vw;
+                display: flex;
+                justify-content: center;
+
+                >.cont {
+                    margin: 1vw;
+                    border-radius: 0.65vw;
+                    background-color: peachpuff;
+                    width: 92%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    >.video {
+                        border-radius: 0.65vw;
+                        margin-top: 1.3vw;
+                        width: 39.4vw;
+                        height: 21.8vw;
+
+                        >iframe {
+                            border-radius: 0.65vw;
+                        }
+                    }
+
+                    >.cov {
+                        border-radius: 0.65vw;
+                        margin-top: 1.3vw;
+                        width: 39.4vw;
+                        height: 21.8vw;
+
+                        >img {
+
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0.65vw;
+                        }
+                    }
+
+                    >.syn {
+                        margin-top: 1.2vw;
+                        width: 45.6vw;
+                        height: 26vw;
+                        font-size: 1vw;
+                        background-color: peachpuff;
+                        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+                        >h3 {
+                            font-size: 1.22vw;
+                        }
+                    }
+                }
+
+
+            }
+
+
+        }
+
+
+    }
+
+    .head {
+        /* style untuk search.html dan seek.html  */
+        width: 100%;
+        margin-top: 9vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        >video {
+            width: 50vw;
+            height: 28.1vw;
+            border-radius: 1.3vw;
+        }
+
+        >h4 {
+            font-size: 1.3vw;
+            text-align: justify;
+            color: white;
+            background-color: black;
+            position: absolute;
+            top: 67%;
+            right: 25%;
+            border: 1px solid orange;
+            opacity: 70%;
+            border-radius: 0.65vw;
+            padding: 0.65vw;
+            z-index: 1;
+        }
+
+        .search {
+            text-align: center;
+
+            >form {
+                >input {
+                    padding-left: 1.95vw;
+                    margin: 1.3vw;
+                    border-radius: 3.25vw;
+                    width: 26vw;
+                    height: 3.25vw;
+                    font-size: 1.2vw;
+                }
+            }
+
+        }
+    }
+
+    .src {
+        /* style untuk konten yang berhasil di search  */
+        margin: 20px auto;
+        border: 5px solid orange;
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.65vw;
+
+        >a {
+            >figure {
+                margin: 1vw 2.6vw;
+                width: 13vw;
+                height: 23.45vw;
+                background-color: lightsalmon;
+                display: inline-flex;
+                flex-direction: column;
+                border: 2px solid orange;
+                justify-content: space-evenly;
+                /* Menyelaraskan teks secara horizontal */
+                align-items: center;
+                /* Menyelaraskan teks secara vertikal */
+                text-align: center;
+                border: 2px solid salmon;
+                border-radius: 1.3vw;
+
+                >img {
+                    display: block;
+                    width: 8.6vw;
+                    height: 12.1vw;
+                    border: 2px solid salmon;
+                    border-radius: 1vw;
+                }
+
+                >figcaption {
+                    overflow: auto;
+                    scrollbar-width: none;
+                    background-color: peachpuff;
+                    border: 2px solid salmon;
+                    border-radius: 0.65vw;
+                    font-size: 1vw;
+                    width: 10.1vw;
+                    height: 6.5vw;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    white-space: normal;
+                    text-align: center;
+                }
+
+            }
+
+            >figure:hover {
+                box-shadow: 0px 0px 12px 5px orange;
+            }
+        }
+
+
+
+    }
+}
+
+/* tampilan untuk menampilkan page ketika posisi portrait sama saja tetapi ada perubahan aturan sehingga struktur htmlnya lurus dari atas kebawah  */
+@media (orientation: portrait) {
+    header {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: white;
+        border-bottom: 5px solid orange;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        position: fixed;
+        z-index: 15;
+        top: 0;
+        right: 0;
+
+        >.judul {
+            display: flex;
+            justify-content: center;
+            width: 20%;
+            background-color: black;
+
+            >h1 {
+                margin: auto;
+                color: white;
+                font-family: 'Oswald', sans-serif;
+                font-size: 2vw;
+            }
+        }
+
+        >.navy {
+            width: 80%;
+            background-color: white;
+
+            >ul {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                list-style-type: none;
+
+                >li {
+                    font-size: 1.5vw;
+                    margin-top: 0.5vw;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    main {
+        width: 100%;
+        /* perubahan display  */
+        display: block;
+        justify-content: space-evenly;
+
+        >div {
+            width: 98%;
+
+            section {
+                /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+                width: 100%;
+                margin-top: 15vw;
+
+                >h1 {
+                    width: 25.3vw;
+                    font-size: 2vw;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    text-align: center;
+                    border-radius: 0.4em 0.4em 0px 0px;
+                    background-color: orange;
+                    color: white;
+                    margin: 0;
+                    border-bottom: 2px solid orange;
+                }
+
+                >hr {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 99.4%;
+                    border-radius: 0px 1.4vw 0px 0px;
+                }
+
+                >.b {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 99.4%;
+                    border-radius: 0px 0px 1.4vw 1.4vw;
+
+                }
+
+                >.avr,
+                .slide {
+                    /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+                    width: 100%;
+                    height: 43vw;
+                    position: relative;
+
+                    >a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: opacity 1s;
+
+                        >figure {
+                            margin: 0;
+                            width: 100%;
+                            height: 100%;
+
+
+                            >img {
+                                width: 100%;
+                                height: 100%;
+                            }
+
+                            >figcaption {
+                                position: absolute;
+                                bottom: 20px;
+                                left: 20px;
+                                color: white;
+                                font-size: 1.6vw;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                padding: 0.4em;
+                                border-radius: 0.2em;
+                            }
+                        }
+
+
+                    }
+
+                    >a.active {
+                        opacity: 1;
+                        z-index: 10;
+                    }
+
+
+
+
+
+                }
+
+            }
+
+            >article {
+                /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+                width: 100%;
+
+                >.cur,
+                .up,
+                .finish,
+                .fis,
+                .manhua,
+                .manhwa {
+                    margin-top: 0;
+                    border: 5px solid orange;
+                    width: 100%;
+                    height: 20.5vw;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    white-space: nowrap;
+                    border-radius: 0px 0px 0.7vw 0.7vw;
+
+                    >a {
+                        >figure {
+                            width: 12vw;
+                            height: 16.4vw;
+                            background-color: lightsalmon;
+                            display: inline-flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            /* Menyelaraskan teks secara horizontal */
+                            align-items: center;
+                            /* Menyelaraskan teks secara vertikal */
+                            text-align: center;
+                            border: 2px solid salmon;
+                            border-radius: 0.8vw;
+                            padding: 0.4vw;
+                            margin: 2vw;
+
+                            >img {
+                                display: block;
+                                width: 8.3vw;
+                                height: 9vw;
+                                border: 2px solid salmon;
+                                border-radius: 0.8vw;
+                            }
+
+                            >figcaption {
+                                overflow: auto;
+                                scrollbar-width: none;
+                                background-color: peachpuff;
+                                border: 2px solid salmon;
+                                border-radius: 1.3vw;
+                                width: 10.8vw;
+                                height: 6vw;
+                                word-wrap: break-word;
+                                font-size: 1vw;
+                                overflow-wrap: break-word;
+                                white-space: normal;
+                                text-align: center;
+                            }
+
+                        }
+
+                        >figure:hover {
+                            box-shadow: 0px 0px 0.8vw 0.4vw orange;
+                        }
+                    }
+
+                }
+            }
+
+
+
+        }
+
+        >aside {
+            /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+            width: 100%;
+
+            >.pop,
+            .tops {
+                margin-top: 20px;
+                /* merubah layout sehingga bisa ada di paling bawah  */
+                width: 98%;
+                height: 22vw;
+                margin-bottom: 70px;
+
+                >hr {
+                    margin: 0;
+                    border: 3px solid orange;
+                    width: 100.4%;
+                    border-top-right-radius: 1.4vw;
+                }
+
+                >div {
+                    margin-top: 0;
+                    border: 5px solid orange;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    overflow-y: auto;
+                    overflow-x: auto;
+                    /* white-space: nowrap; */
+                    border-radius: 0px 0px 0.7vw 0.7vw;
+
+                    >a {
+                        >figure {
+                            width: 12vw;
+                            height: 16.8vw;
+                            background-color: lightsalmon;
+                            display: flex;
+                            margin: 2vw;
+                            padding: 0.5vw;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: center;
+                            text-align: center;
+                            border: 2px solid salmon;
+                            border-radius: 1vw;
+
+
+                            >img {
+                                display: block;
+                                width: 8vw;
+                                height: 9vw;
+                                border: 2px solid salmon;
+                                border-radius: 0.5vw;
+                            }
+
+                            >figcaption {
+                                overflow: auto;
+                                background-color: peachpuff;
+                                border: 2px solid salmon;
+                                border-radius: 0.7vw;
+                                width: 10.9vw;
+                                font-size: 1vw;
+                                height: 6vw;
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                white-space: normal;
+                                text-align: center;
+                            }
+                        }
+
+                        >figure:hover {
+                            box-shadow: 0px 0px 0.8vw 0.3vw orange;
+                        }
+
+                    }
+
+
+                }
+
+            }
+        }
+
+    }
+
+    h2 {
+        margin: 1.5vw 0px 0px;
+        display: block;
+        width: 25vw;
+        font-size: 2vw;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        border-radius: 10px 10px 0px 0px;
+        background-color: orange;
+        color: white;
+        border-bottom: 2px solid orange;
+    }
+
+    .a {
+        margin: 0;
+        border: 3px solid orange;
+        width: 100.4%;
+        border-top-right-radius: 1.4vw;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        color: coral;
+    }
+
+    footer {
+        margin-top: 2.5vw;
+        width: 100%;
+        height: 1vw;
+        border-top: 7px solid orange;
+        background-color: white;
+        text-align: center;
+        font-size: 1.5vw;
+
+        >.foot {
+            display: flex;
+            justify-content: space-evenly;
+
+            >div {
+                text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+                width: 27.8vw;
+
+                >h3 {
+                    margin: 3vw 0px 0px 0px;
+                }
+
+                >hr {
+                    border: 1px solid grey;
+                }
+            }
+        }
+
+        >.copy {
+            margin-top: 1.3vw;
+        }
+
+    }
+
+    .show {
+        display: flex;
+        flex-direction: column;
+
+        >.jdl {
+            margin-top: 6em;
+            display: block;
+            font-size: 2vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            border-radius: 0.3em 0.3em 0px 0px;
+            background-color: orange;
+            color: white;
+            padding-bottom: o.3em;
+            border-bottom: 4px solid coral;
+        }
+
+        >article {
+            /* menghapus display flex sehingga strukturnya vertikal  */
+
+            >aside {
+                /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+                width: 100%;
+                background-color: orange;
+                height: 54vw;
+                display: flex;
+                justify-content: center;
+
+                >figure {
+                    border-radius: 0.65vw;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    background-color: peachpuff;
+
+                    >img {
+                        border-radius: 0.65vw;
+                        display: block;
+                        margin-top: 1.9vw;
+                        width: 23vw;
+                        height: 35vw;
+                        box-shadow: 0px 0px 4vw 2vw orange;
+                    }
+
+                    >figcaption {
+                        font-size: 1.7vw;
+                        margin-top: 1.9vw;
+                        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+                        width: 22.1vw;
+                        display: block;
+                    }
+                }
+            }
+
+            >.mid {
+                /* merubah ukurannya menjadi 100% sehingga kontennya memenuhi layar  */
+                border-radius: 0px 0px 0.65vw 0.65vw;
+                width: 100%;
+                background-color: orange;
+                height: 79vw;
+                display: flex;
+                justify-content: center;
+
+                >.cont {
+                    margin: 1vw;
+                    border-radius: 0.65vw;
+                    background-color: peachpuff;
+                    width: 92%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    >.video {
+                        border-radius: 0.65vw;
+                        margin-top: 4vw;
+                        width: 49.4vw;
+                        height: 31.8vw;
+
+                        >iframe {
+                            border-radius: 0.65vw;
+                        }
+                    }
+
+                    >.cov {
+                        border-radius: 0.65vw;
+                        margin-top: 4vw;
+                        width: 49.4vw;
+                        height: 31.8vw;
+
+                        >img {
+
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 0.65vw;
+                        }
+                    }
+
+                    >.syn {
+                        margin-top: 1.2vw;
+                        width: 45.6vw;
+                        height: 26vw;
+                        font-size: 1.5vw;
+                        background-color: peachpuff;
+                        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+
+                        >h3 {
+                            font-size: 2vw;
+                        }
+                    }
+                }
+
+
+            }
+
+
+        }
+
+
+    }
+
+    .head {
+        width: 100%;
+        margin-top: 15vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        >video {
+            width: 50vw;
+            height: 28.1vw;
+            border-radius: 1.3vw;
+        }
+
+        >h4 {
+            font-size: 1.3vw;
+            text-align: justify;
+            color: white;
+            background-color: black;
+            position: absolute;
+            top: 67%;
+            right: 25%;
+            border: 1px solid orange;
+            opacity: 70%;
+            border-radius: 0.65vw;
+            padding: 0.65vw;
+            z-index: 1;
+        }
+
+        .search {
+            text-align: center;
+
+            >form {
+                >input {
+                    padding-left: 1.95vw;
+                    margin: 1.3vw;
+                    border-radius: 3.25vw;
+                    width: 26vw;
+                    height: 3.25vw;
+                    font-size: 1.2vw;
+                }
+            }
+
+        }
+    }
+
+    .src {
+        margin: 20px auto;
+        border: 5px solid orange;
+        width: 95%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.65vw;
+
+        >a {
+            >figure {
+                margin: 1vw 2.6vw;
+                width: 13vw;
+                height: 23.45vw;
+                background-color: lightsalmon;
+                display: inline-flex;
+                flex-direction: column;
+                border: 2px solid orange;
+                justify-content: space-evenly;
+                align-items: center;
+                text-align: center;
+                border: 2px solid salmon;
+                border-radius: 1.3vw;
+
+                >img {
+                    display: block;
+                    width: 8.6vw;
+                    height: 12.1vw;
+                    border: 2px solid salmon;
+                    border-radius: 1vw;
+                }
+
+                >figcaption {
+                    overflow: auto;
+                    scrollbar-width: none;
+                    background-color: peachpuff;
+                    border: 2px solid salmon;
+                    border-radius: 0.65vw;
+                    font-size: 1vw;
+                    width: 10.1vw;
+                    height: 6.5vw;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    white-space: normal;
+                    text-align: center;
+                }
+
+            }
+
+            >figure:hover {
+                box-shadow: 0px 0px 12px 5px orange;
+            }
+        }
+
+    }
+}
