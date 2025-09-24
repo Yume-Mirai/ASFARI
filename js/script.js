@@ -4,7 +4,7 @@ let currentIndex = 0;
 let figures = [];
 
 // kode untuk mengambil data dan menampilkan api anime now//
-fetch("https://kitsu.io/api/edge/anime?filter%5BseasonYear%5D=2024&filter[season]=summer&page%5Blimit%5D=20&page%5Boffset%5D=0")
+fetch("https://kitsu.io/api/edge/anime?filter%5BseasonYear%5D=2025&filter[season]=summer&page%5Blimit%5D=20&page%5Boffset%5D=0")
   .then((response) => response.json())
   .then((x) => {
     let c = x.data;

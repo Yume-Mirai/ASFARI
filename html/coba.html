@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Belajar Spotify API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #191414;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #1DB954;
+    }
+
+    #login {
+      display: none;
+      background-color: #1DB954;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    #hasil {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Spotify API Demo</h1>
+  <a id="login" href="#">Login ke Spotify</a>
+
+  <div id="hasil"></div>
+
+  <script>
+    const client_id = '9faf64fac8984b369b4566bee828e832'; // Ganti dengan Client ID Spotify kamu
+    const redirect_uri = 'http://127.0.0.1:5501/';
+
+    const hash = window.location.hash;
+    const token = new URLSearchParams(hash.substring(1)).get('access_token');
+
+    const loginLink = document.getElementById('login');
+    const hasilDiv = document.getElementById('hasil');
+
+    if (!token) {
+      const authUrl = `https://accounts.spotify.com/authorize?client_id=${client_id}&response_type=token&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=user-read-private user-read-email&show_dialog=true`;
+      loginLink.href = authUrl;
+      loginLink.style.display = 'inline-block';
+    } else {
+      fetch("https://api.spotify.com/v1/me", {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      })
+      .then(res => res.json())
+      .then(data => {
+        hasilDiv.innerHTML = `
+          <p>Halo, <strong>${data.display_name}</strong>!</p>
+          <p>Email: ${data.email}</p>
+          <p>Negara: ${data.country}</p>
+        `;
+      })
+      .catch(err => {
+        hasilDiv.textContent = "Gagal mengambil data: " + err;
+      });
+    }
+  </script>
+</body>
+</html>
